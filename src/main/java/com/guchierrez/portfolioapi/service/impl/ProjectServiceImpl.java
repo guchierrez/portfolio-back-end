@@ -29,7 +29,7 @@ public class ProjectServiceImpl implements ProjectService {
         createdProject.setFeatures(projectData.getFeatures());
         createdProject.setFeatures_en(projectData.getFeatures_en());
         createdProject.setProject_url(projectData.getProject_url());
-        createdProject.setRepository_url(projectData.getProject_url());
+        createdProject.setRepository_url(projectData.getRepository_url());
 
         return projectRepository.save(createdProject);
     }

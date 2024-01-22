@@ -38,10 +38,10 @@ public class Project {
     private String project_url;
 
     @Column
-    private List<Map<String, String>> repositories;
+    private List<String> repositories;
 
 
-    public Project(long id, String name, String description, String description_en, String image, List<String> technologies, List<String> features, List<String> features_en, String project_url, List<Map<String, String>> repositories) {
+    public Project(long id, String name, String description, String description_en, String image, List<String> technologies, List<String> features, List<String> features_en, String project_url, List<String> repositories) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -129,11 +129,11 @@ public class Project {
         this.project_url = project_url;
     }
 
-    public List<Map<String, String>> getRepositories() {
+    public List<String> getRepositories() {
         return repositories;
     }
 
-    public void setRepositories(List<Map<String, String>> repositories) {
+    public void setRepositories(List<String> repositories) {
         this.repositories = repositories;
     }
 }

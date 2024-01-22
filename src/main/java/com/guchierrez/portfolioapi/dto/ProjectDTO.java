@@ -35,8 +35,8 @@ public class ProjectDTO {
     @NotEmpty(message = "URL cannot be empty")
     private String project_url;
 
-    @NotEmpty(message = "URL cannot be empty")
-    private List<Map<String, String>> repositories;
+    @NotEmpty(message = "Repositories cannot be empty")
+    private List<String> repositories;
     public String getName() {
         return name;
     }
@@ -101,11 +101,11 @@ public class ProjectDTO {
         this.project_url = project_url;
     }
 
-    public List<Map<String, String>> getRepositories() {
+    public List<String> getRepositories() {
         return repositories;
     }
 
-    public void setRepositories(List<Map<String, String>> repositories) {
+    public void setRepositories(List<String> repositories) {
         this.repositories = repositories;
     }
 }

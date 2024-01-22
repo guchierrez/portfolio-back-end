@@ -3,6 +3,7 @@ package com.guchierrez.portfolioapi.controller;
 import com.guchierrez.portfolioapi.dto.ProjectDTO;
 import com.guchierrez.portfolioapi.model.Project;
 import com.guchierrez.portfolioapi.service.ProjectService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class ProjectController {
     }
 
     @PostMapping
-    public ResponseEntity<Project> createProject(@RequestBody final ProjectDTO projectData) {
+    public ResponseEntity<Project> createProject(@Valid @RequestBody final ProjectDTO projectData) {
         final Project createdProject = projectService.createProject(projectData);
 
         return new ResponseEntity<>(createdProject, HttpStatus.CREATED);
@@ -33,7 +34,7 @@ public class ProjectController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Project> updateProject(@RequestBody final ProjectDTO projectData, @PathVariable String id) {
+    public ResponseEntity<Project> updateProject(@Valid @RequestBody final ProjectDTO projectData, @PathVariable String id) {
         final Project updatedProject = projectService.updateProject(projectData, Long.parseLong(id));
 
         return new ResponseEntity<>(updatedProject, HttpStatus.OK);

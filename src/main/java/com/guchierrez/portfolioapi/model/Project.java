@@ -3,6 +3,7 @@ package com.guchierrez.portfolioapi.model;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table(name = "projects")
@@ -37,20 +38,20 @@ public class Project {
     private String project_url;
 
     @Column
-    private String repository_url;
+    private List<Map<String, String>> repositories;
 
 
-    public Project(long id, String name, String description, String image, String description_en, List<String> technologies, List<String> features, List<String> features_en, String project_url, String repository_url) {
+    public Project(long id, String name, String description, String description_en, String image, List<String> technologies, List<String> features, List<String> features_en, String project_url, List<Map<String, String>> repositories) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.image = image;
         this.description_en = description_en;
+        this.image = image;
         this.technologies = technologies;
         this.features = features;
         this.features_en = features_en;
         this.project_url = project_url;
-        this.repository_url = repository_url;
+        this.repositories = repositories;
     }
 
     public Project() {
@@ -128,11 +129,11 @@ public class Project {
         this.project_url = project_url;
     }
 
-    public String getRepository_url() {
-        return repository_url;
+    public List<Map<String, String>> getRepositories() {
+        return repositories;
     }
 
-    public void setRepository_url(String repository_url) {
-        this.repository_url = repository_url;
+    public void setRepositories(List<Map<String, String>> repositories) {
+        this.repositories = repositories;
     }
 }

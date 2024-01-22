@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 import java.util.List;
+import java.util.Map;
 
 public class ProjectDTO {
     @NotEmpty(message = "Name cannot be empty")
@@ -35,7 +36,7 @@ public class ProjectDTO {
     private String project_url;
 
     @NotEmpty(message = "URL cannot be empty")
-    private String repository_url;
+    private List<Map<String, String>> repositories;
     public String getName() {
         return name;
     }
@@ -100,11 +101,11 @@ public class ProjectDTO {
         this.project_url = project_url;
     }
 
-    public String getRepository_url() {
-        return repository_url;
+    public List<Map<String, String>> getRepositories() {
+        return repositories;
     }
 
-    public void setRepository_url(String repository_url) {
-        this.repository_url = repository_url;
+    public void setRepositories(List<Map<String, String>> repositories) {
+        this.repositories = repositories;
     }
 }

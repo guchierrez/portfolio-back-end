@@ -29,7 +29,7 @@ public class ProjectServiceImpl implements ProjectService {
         createdProject.setFeatures(projectData.getFeatures());
         createdProject.setFeatures_en(projectData.getFeatures_en());
         createdProject.setProject_url(projectData.getProject_url());
-        createdProject.setRepository_url(projectData.getRepository_url());
+        createdProject.setRepositories(projectData.getRepositories());
 
         return projectRepository.save(createdProject);
     }
@@ -49,7 +49,7 @@ public class ProjectServiceImpl implements ProjectService {
         foundProject.setFeatures((projectData.getFeatures() == null) ? foundProject.getFeatures() : projectData.getFeatures());
         foundProject.setFeatures_en((projectData.getFeatures_en() == null) ? foundProject.getFeatures_en() : projectData.getFeatures_en());
         foundProject.setProject_url((projectData.getProject_url() == null) ? foundProject.getProject_url() : projectData.getProject_url());
-        foundProject.setRepository_url((projectData.getRepository_url() == null) ? foundProject.getRepository_url() : projectData.getRepository_url());
+        foundProject.setRepositories((projectData.getRepositories() == null) ? foundProject.getRepositories() : projectData.getRepositories());
 
         return projectRepository.save(foundProject);
     }

@@ -18,8 +18,13 @@ public class ProjectServiceImpl implements ProjectService {
 
         createdProject.setName(projectData.getName());
         createdProject.setDescription(projectData.getDescription());
+        createdProject.setDescription_en(projectData.getDescription_en());
+        createdProject.setImage(projectData.getImage());
         createdProject.setTechnologies(projectData.getTechnologies());
         createdProject.setFeatures(projectData.getFeatures());
+        createdProject.setFeatures_en(projectData.getFeatures_en());
+        createdProject.setProject_url(projectData.getProject_url());
+        createdProject.setRepository_url(projectData.getProject_url());
 
         return projectRepository.save(createdProject);
     }
@@ -33,8 +38,13 @@ public class ProjectServiceImpl implements ProjectService {
 
         foundProject.setName(projectData.getName());
         foundProject.setDescription(projectData.getDescription());
+        foundProject.setDescription_en(projectData.getDescription_en());
+        foundProject.setImage(projectData.getImage());
         foundProject.setTechnologies(projectData.getTechnologies());
         foundProject.setFeatures(projectData.getFeatures());
+        foundProject.setFeatures_en(projectData.getFeatures_en());
+        foundProject.setProject_url(projectData.getProject_url());
+        foundProject.setRepository_url(projectData.getRepository_url());
 
         return projectRepository.save(foundProject);
     }
